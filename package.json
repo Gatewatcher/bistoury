@@ -30,11 +30,13 @@
     "prepublish": "npm run build",
     "build": "vite build && tsc --emitDeclarationOnly",
     "test": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^11.0.3",
     "@semantic-release/npm": "^12.0.1",
@@ -47,5 +49,9 @@
     "vite": "6.3.5",
     "vite-plugin-dts": "4.5.4",
     "vitest": "3.2.1"
-  }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
 }
