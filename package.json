@@ -1,0 +1,33 @@
+{
+  "name": "bistoury",
+  "version": "0.0.1",
+  "description": "Gatewatcher Skin utils",
+  "author": "Gatewatcher frontend team <frontend@gatewatcher.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gatewatcher/bistoury"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    "./utils-web-storage": {
+      "import": "./dist/utils-web-storage/index.js",
+      "types": "./dist/utils-web-storage/index.d.ts"
+    }
+  },
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.29",
+    "@vitest/ui": "3.2.1",
+    "jsdom": "26.1.0",
+    "typescript": "5.8.3",
+    "vite": "6.3.5",
+    "vite-plugin-dts": "4.5.4",
+    "vitest": "3.2.1"
+  }
+}
