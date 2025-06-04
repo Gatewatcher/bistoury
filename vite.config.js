@@ -6,6 +6,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
+        utilsLang: path.resolve(__dirname, "src/utils-lang/index.ts"),
+        utilsLog: path.resolve(__dirname, "src/utils-log/index.ts"),
         utilsWebStorage: path.resolve(
           __dirname,
           "src/utils-web-storage/index.ts"
