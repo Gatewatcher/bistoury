@@ -1,5 +1,5 @@
 {
-  "name": "bistoury",
+  "name": "@gatewatcher/bistoury",
   "version": "0.0.1",
   "description": "Gatewatcher Skin utils",
   "author": "Gatewatcher frontend team",
@@ -7,6 +7,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Gatewatcher/bistoury"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "main": "./dist/index.js",
   "exports": {

@@ -22,6 +22,7 @@ jobs:
         with:
           node-version: 20
           registry-url: "https://registry.npmjs.org/"
+          scope: "@gatewatcher"
           cache: "npm"
 
       - name: Install dependencies
