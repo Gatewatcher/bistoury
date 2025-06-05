@@ -11,18 +11,21 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "exports": {
     "./utils-lang": {
-      "import": "./dist/utils-lang/index.js",
+      "import": "./dist/utilsLang.js",
       "types": "./dist/utils-lang/index.d.ts"
     },
     "./utils-log": {
-      "import": "./dist/utils-log/index.js",
+      "import": "./dist/utilsLog.js",
       "types": "./dist/utils-log/index.d.ts"
     },
     "./utils-web-storage": {
-      "import": "./dist/utils-web-storage/index.js",
+      "import": "./dist/utilsWebStorage.js",
       "types": "./dist/utils-web-storage/index.d.ts"
     }
   },
@@ -49,9 +52,5 @@
     "vite": "6.3.5",
     "vite-plugin-dts": "4.5.4",
     "vitest": "3.2.1"
-  },
-  "files": [
-    "dist",
-    "README.md"
-  ]
+  }
 }
