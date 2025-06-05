@@ -4,6 +4,7 @@
   "description": "Gatewatcher Skin utils",
   "author": "Gatewatcher frontend team",
   "license": "MIT",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/Gatewatcher/bistoury"
@@ -13,15 +14,15 @@
   },
   "exports": {
     "./utils-lang": {
-      "import": "./dist/utilsLang.js",
+      "import": "./dist/utils-lang/index.js",
       "types": "./dist/utils-lang/index.d.ts"
     },
     "./utils-log": {
-      "import": "./dist/utilsLog.js",
+      "import": "./dist/utils-log/index.js",
       "types": "./dist/utils-log/index.d.ts"
     },
     "./utils-web-storage": {
-      "import": "./dist/utilsWebStorage.js",
+      "import": "./dist/utils-web-storage/index.js",
       "types": "./dist/utils-web-storage/index.d.ts"
     }
   },
