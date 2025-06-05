@@ -3,7 +3,6 @@
     "main"
   ],
   "plugins": [
-    "@semantic-release/commit-analyzer",
     [
       "semantic-release-plugin-update-version-in-files",
       {
@@ -21,29 +20,13 @@
         "message": "chore(release): ${nextRelease.version} [skip ci]"
       }
     ],
+    "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     [
       "@semantic-release/exec",
       {
         "prepareCmd": "npm run build"
-      }
-    ],
-    [
-      "semantic-release-plugin-update-version-in-files",
-      {
-        "files": [
-          "package.json"
-        ]
-      }
-    ],
-    [
-      "@semantic-release/git",
-      {
-        "assets": [
-          "package.json"
-        ],
-        "message": "chore(release): ${nextRelease.version} [skip ci]"
       }
     ],
     "@semantic-release/npm",
