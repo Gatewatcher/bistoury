@@ -4,6 +4,14 @@
   ],
   "plugins": [
     "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "npm run build"
+      }
+    ],
     [
       "semantic-release-plugin-update-version-in-files",
       {
@@ -16,18 +24,10 @@
       "@semantic-release/git",
       {
         "assets": [
-          "CHANGELOG.md",
-          "package.json"
+          "package.json",
+          "CHANGELOG.md"
         ],
-        "message": "chore(release): ${nextRelease.version}"
-      }
-    ],
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
-    [
-      "@semantic-release/exec",
-      {
-        "prepareCmd": "npm run build"
+        "message": "chore(release): ${nextRelease.version} [skip ci]"
       }
     ],
     "@semantic-release/npm",
