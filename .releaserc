@@ -3,6 +3,7 @@
     "main"
   ],
   "plugins": [
+    "@semantic-release/commit-analyzer",
     [
       "semantic-release-plugin-update-version-in-files",
       {
@@ -20,7 +21,6 @@
         "message": "chore(release): ${nextRelease.version} [skip ci]"
       }
     ],
-    "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     [
