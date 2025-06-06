@@ -13,6 +13,10 @@
   },
   "type": "module",
   "exports": {
+    "utils-event": {
+      "import": "./dist/utils-event/index.js",
+      "types": "./dist/utils-event/index.d.ts"
+    },
     "utils-lang": {
       "import": "./dist/utils-lang/index.js",
       "types": "./dist/utils-lang/index.d.ts"
@@ -28,6 +32,9 @@
   },
   "typesVersions": {
     "*": {
+      "utils-event": [
+        "./dist/utils-event/index.d.ts"
+      ],
       "utils-lang": [
         "./dist/utils-lang/index.d.ts"
       ],

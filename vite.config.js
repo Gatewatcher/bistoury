@@ -6,6 +6,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
+        "utils-event": path.resolve(__dirname, "src/utils-event/index.ts"),
         "utils-lang": path.resolve(__dirname, "src/utils-lang/index.ts"),
         "utils-log": path.resolve(__dirname, "src/utils-log/index.ts"),
         "utils-web-storage": path.resolve(
