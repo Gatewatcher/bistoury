@@ -78,6 +78,8 @@
     "@semantic-release/github": "^11.0.3",
     "@semantic-release/npm": "^12.0.1",
     "@semantic-release/release-notes-generator": "^14.0.3",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "14.0.0",
     "@types/node": "22.15.29",
     "@vitest/ui": "3.2.1",
     "jsdom": "26.1.0",
