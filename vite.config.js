@@ -29,4 +29,9 @@ export default defineConfig({
       outputDir: "dist",
     }),
   ],
+  test: {
+    globals: true,
+    environment: "jsdom",
+    include: ["src/**/*.test.ts"],
+  },
 });
