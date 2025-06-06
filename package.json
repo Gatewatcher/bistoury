@@ -29,6 +29,10 @@
       "import": "./dist/utils-log/index.js",
       "types": "./dist/utils-log/index.d.ts"
     },
+    "utils-types": {
+      "import": "./dist/utils-types/index.js",
+      "types": "./dist/utils-types/index.d.ts"
+    },
     "utils-web-storage": {
       "import": "./dist/utils-web-storage/index.js",
       "types": "./dist/utils-web-storage/index.d.ts"
@@ -47,6 +51,9 @@
       ],
       "utils-log": [
         "./dist/utils-log/index.d.ts"
+      ],
+      "utils-types": [
+        "./dist/utils-types/index.d.ts"
       ],
       "utils-web-storage": [
         "./dist/utils-web-storage/index.d.ts"
