@@ -1,32 +1,25 @@
 {
-  "include": ["src", "types", "custom.d.ts"],
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "./dist",
+    "target": "ES2020",
     "module": "esnext",
     "lib": ["dom", "esnext", "dom.iterable"],
     "types": ["vite/client", "node", "vitest/globals"],
-    "importHelpers": true,
     "declaration": true,
-    "sourceMap": true,
+    "declarationDir": "./dist",
+    "emitDeclarationOnly": true,
     "rootDir": "./src",
-    "strict": false,
-    "noFallthroughCasesInSwitch": true,
-    "downlevelIteration": true,
     "moduleResolution": "node",
-    "baseUrl": "./",
-    "declarationMap": true,
-    "paths": {
-      "*": ["src/*", "node_modules/*"]
-    },
-    "jsx": "preserve",
+    "strict": false,
     "esModuleInterop": true,
-    "target": "ESNext",
-    "allowJs": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
     "isolatedModules": true,
-    "noImplicitThis": false
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "composite": false,
+    "allowSyntheticDefaultImports": true
   },
+  "include": ["src"],
   "exclude": ["node_modules", "**/*.test.tsx?", "dist"]
 }

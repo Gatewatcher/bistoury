@@ -6,26 +6,21 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
-        utilsLang: path.resolve(__dirname, "src/utils-lang/index.ts"),
-        utilsLog: path.resolve(__dirname, "src/utils-log/index.ts"),
-        utilsWebStorage: path.resolve(
+        "utils-lang": path.resolve(__dirname, "src/utils-lang/index.ts"),
+        "utils-log": path.resolve(__dirname, "src/utils-log/index.ts"),
+        "utils-web-storage": path.resolve(
           __dirname,
           "src/utils-web-storage/index.ts"
         ),
       },
       formats: ["es"],
-      fileName: (_, entryName) => `${entryName}.js`,
+      fileName: (_, entryName) => `${entryName}/index.js`,
     },
     outDir: "dist",
+    emptyOutDir: true,
     rollupOptions: {
       external: [],
-      output: {
-        preserveModules: true,
-        preserveModulesRoot: "src",
-        entryFileNames: "[name].js",
-      },
     },
-    emptyOutDir: true,
   },
   plugins: [
     dts({
@@ -33,9 +28,4 @@ export default defineConfig({
       outputDir: "dist",
     }),
   ],
-  test: {
-    globals: true,
-    environment: "jsdom",
-    include: ["src/**/*.test.ts"],
-  },
 });
