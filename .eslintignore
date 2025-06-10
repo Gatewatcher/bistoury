@@ -4,3 +4,5 @@ coverage
 public
 *.d.ts
 gateway
+package-lock.json
+package.json
