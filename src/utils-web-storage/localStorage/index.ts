@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { isDefined, isJSON } from './../../utils-lang';
+import { isDefined, isJSON } from './../../utils-lang/common';
 import { consoleDebug } from './../../utils-log';
 
 export const isSupported = (): boolean => {

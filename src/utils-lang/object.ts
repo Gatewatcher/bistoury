@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { isDefined } from '.';
+import { isDefined } from './common';
 
 export type AnyRecord = { [key: string]: any };
 

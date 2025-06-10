@@ -1,4 +1,4 @@
-import { isDefined } from '..';
+import { isDefined } from '../common';
 
 describe('isDefined', () => {
   const unsafeSlice = (variable?: string | null) => {
