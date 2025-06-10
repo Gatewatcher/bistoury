@@ -1,13 +1,13 @@
-import { act, renderHook } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { act, renderHook } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-import { useIdle } from "..";
+import { useIdle } from '..';
 
-describe("useIdle", () => {
+describe('useIdle', () => {
   const user = userEvent.setup();
 
   const renderUseIdle = (...args: Partial<Parameters<typeof useIdle>>) => {
-    const { rerender, ...rest } = renderHook((args) => useIdle(...args), {
+    const { rerender, ...rest } = renderHook(args => useIdle(...args), {
       initialProps: args,
     });
 
@@ -17,17 +17,17 @@ describe("useIdle", () => {
     };
   };
 
-  it("should not be idle by default", async () => {
+  it('should not be idle by default', async () => {
     const isIdle = renderUseIdle().result.current;
     expect(isIdle).toBe(false);
   });
 
-  it("should be idle initialState true", async () => {
+  it('should be idle initialState true', async () => {
     const isIdle = renderUseIdle({ initialState: true }).result.current;
     expect(isIdle).toBe(true);
   });
 
-  it("should not be idle after click on document body", async () => {
+  it('should not be idle after click on document body', async () => {
     const isIdleHook = renderUseIdle({
       initialState: true,
       timeout: 0,
@@ -38,7 +38,7 @@ describe("useIdle", () => {
     expect(isIdleHook.result.current).toBe(false);
   });
 
-  it("should be idle after some times without user interaction", async () => {
+  it('should be idle after some times without user interaction', async () => {
     vi.useFakeTimers();
     const isIdleHook = renderUseIdle({
       initialState: false,

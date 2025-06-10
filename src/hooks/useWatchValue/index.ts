@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export type UseWatchValueOnChangeParams<T> = {
   current: T;
@@ -6,7 +6,7 @@ export type UseWatchValueOnChangeParams<T> = {
 };
 
 export type UseWatchValueOnChangeHandler<T> = (
-  params: UseWatchValueOnChangeParams<T>
+  params: UseWatchValueOnChangeParams<T>,
 ) => void;
 
 /**
@@ -14,7 +14,7 @@ export type UseWatchValueOnChangeHandler<T> = (
  */
 export const useWatchValue = <T>(
   value: T,
-  onChange: UseWatchValueOnChangeHandler<T>
+  onChange: UseWatchValueOnChangeHandler<T>,
 ) => {
   const [previous, setPrevious] = useState<T>(value);
 

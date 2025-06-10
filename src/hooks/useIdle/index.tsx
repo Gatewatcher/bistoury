@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { debounce as createDebounce } from "./../../utils-event";
+import { debounce as createDebounce } from './../../utils-event';
 
 const DEFAULT_EVENTS = [
-  "mousemove",
-  "mousedown",
-  "keydown",
-  "touchstart",
-  "wheel",
+  'mousemove',
+  'mousedown',
+  'keydown',
+  'touchstart',
+  'wheel',
 ];
 const TIMEOUT = 60000;
 const DEBOUNCE_TIMEOUT = 1000;
@@ -51,7 +51,7 @@ export const useIdle = ({
     for (let i = 0; i < events.length; i++) {
       window.addEventListener(events[i], onEvent, { passive: true });
     }
-    document.addEventListener("visibilitychange", onVisibility, {
+    document.addEventListener('visibilitychange', onVisibility, {
       passive: true,
     });
 
@@ -63,7 +63,7 @@ export const useIdle = ({
       for (let i = 0; i < events.length; i++) {
         window.removeEventListener(events[i], onEvent);
       }
-      document.removeEventListener("visibilitychange", onVisibility);
+      document.removeEventListener('visibilitychange', onVisibility);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debounceTimeout, events, timeout]);

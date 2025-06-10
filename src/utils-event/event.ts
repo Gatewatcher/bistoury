@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 export const isInInput = (e: any): boolean => {
   const targetTagName = e.target.nodeName.toUpperCase();
   return targetTagName === 'INPUT' || targetTagName === 'TEXTAREA';

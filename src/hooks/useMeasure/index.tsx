@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Adapted from https://github.com/pmndrs/react-use-measure
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { debounce as createDebounce } from "./../../utils-event";
-
-import { useOnWindowResize } from "../useOnWindowResize";
-import { useOnWindowScroll } from "../useOnWindowScroll";
+import { useOnWindowResize } from '../useOnWindowResize';
+import { useOnWindowScroll } from '../useOnWindowScroll';
+import { debounce as createDebounce } from './../../utils-event';
 
 interface ResizeObserver {
   observe(target: Element, options?: any): void;
@@ -30,7 +30,7 @@ type HTMLOrSVGElement = HTMLElement | SVGElement;
 type Result = [
   (element: HTMLOrSVGElement | null) => void,
   RectReadOnly,
-  () => void
+  () => void,
 ];
 
 type State = {
@@ -51,15 +51,15 @@ export const useMeasure = (
     debounce: 0,
     scroll: false,
     enabled: true,
-  }
+  },
 ): Result => {
   const ResizeObserver =
-    typeof window === "undefined"
+    typeof window === 'undefined'
       ? class ResizeObserver {}
       : (window as any).ResizeObserver;
 
   if (!ResizeObserver) {
-    throw new Error("Resize observer is not supported.");
+    throw new Error('Resize observer is not supported.');
   }
 
   const [bounds, set] = useState<RectReadOnly>({
@@ -81,12 +81,12 @@ export const useMeasure = (
   });
 
   const scrollDebounce = debounce
-    ? typeof debounce === "number"
+    ? typeof debounce === 'number'
       ? debounce
       : debounce.scroll
     : null;
   const resizeDebounce = debounce
-    ? typeof debounce === "number"
+    ? typeof debounce === 'number'
       ? debounce
       : debounce.resize
     : null;
@@ -116,8 +116,8 @@ export const useMeasure = (
 
   function removeListeners() {
     if (state.current.scrollContainers) {
-      state.current.scrollContainers.forEach((element) =>
-        element.removeEventListener("scroll", scrollChange, true)
+      state.current.scrollContainers.forEach(element =>
+        element.removeEventListener('scroll', scrollChange, true),
       );
       state.current.scrollContainers = null;
     }
@@ -134,11 +134,11 @@ export const useMeasure = (
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     state.current.resizeObserver!.observe(state.current.element);
     if (scroll && state.current.scrollContainers) {
-      state.current.scrollContainers.forEach((scrollContainer) =>
-        scrollContainer.addEventListener("scroll", scrollChange, {
+      state.current.scrollContainers.forEach(scrollContainer =>
+        scrollContainer.addEventListener('scroll', scrollChange, {
           capture: true,
           passive: true,
-        })
+        }),
       );
     }
   }
@@ -166,26 +166,26 @@ export const useMeasure = (
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [scroll, scrollChange, resizeChange]
+    [scroll, scrollChange, resizeChange],
   );
 
   useEffect(
     () => removeListeners,
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+    [],
   );
   return [ref, bounds, forceRefresh];
 };
 
 function findScrollContainers(
-  element: HTMLOrSVGElement | null
+  element: HTMLOrSVGElement | null,
 ): HTMLOrSVGElement[] {
   const result: HTMLOrSVGElement[] = [];
   if (!element || element === document.body) return result;
   const { overflow, overflowX, overflowY } = window.getComputedStyle(element);
   if (
     [overflow, overflowX, overflowY].some(
-      (prop) => prop === "auto" || prop === "scroll"
+      prop => prop === 'auto' || prop === 'scroll',
     )
   )
     result.push(element);
@@ -193,14 +193,14 @@ function findScrollContainers(
 }
 
 const keys: (keyof RectReadOnly)[] = [
-  "x",
-  "y",
-  "top",
-  "bottom",
-  "left",
-  "right",
-  "width",
-  "height",
+  'x',
+  'y',
+  'top',
+  'bottom',
+  'left',
+  'right',
+  'width',
+  'height',
 ];
 const areBoundsEqual = (a: RectReadOnly, b: RectReadOnly): boolean =>
-  keys.every((key) => a[key] === b[key]);
+  keys.every(key => a[key] === b[key]);

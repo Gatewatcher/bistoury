@@ -1,10 +1,10 @@
-import { circularLoader, isLoading } from "../constants";
+import { circularLoader, isLoading } from '../constants';
 
 export type TestId = string;
 export type TestIds = Record<string, TestId>;
 
 export type DataTestId = {
-  "data-testid"?: TestId;
+  'data-testid'?: TestId;
 };
 
 export type TestIdLoading = typeof isLoading | typeof circularLoader;

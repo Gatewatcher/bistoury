@@ -1,6 +1,6 @@
-import { render } from "@testing-library/react";
+import { render } from '@testing-library/react';
 
-import { UseWatchValueOnChangeHandler, useWatchValue } from "..";
+import { UseWatchValueOnChangeHandler, useWatchValue } from '..';
 
 type TestComponentProps<T> = {
   onChange: UseWatchValueOnChangeHandler<T>;
@@ -12,11 +12,11 @@ const TestComponent = <T,>({ value, onChange }: TestComponentProps<T>) => {
   return null;
 };
 
-describe("useWatchValue unit tests", () => {
-  it("should call onChange()", () => {
+describe('useWatchValue unit tests', () => {
+  it('should call onChange()', () => {
     const onChange = vi.fn();
     const { rerender } = render(
-      <TestComponent onChange={onChange} value="Hello" />
+      <TestComponent onChange={onChange} value="Hello" />,
     );
 
     expect(onChange).not.toHaveBeenCalled();
@@ -24,15 +24,15 @@ describe("useWatchValue unit tests", () => {
     rerender(<TestComponent onChange={onChange} value="World" />);
 
     expect(onChange).toHaveBeenCalledWith({
-      current: "World",
-      previous: "Hello",
+      current: 'World',
+      previous: 'Hello',
     });
   });
 
-  it("should not call onChange()", () => {
+  it('should not call onChange()', () => {
     const onChange = vi.fn();
     const { rerender } = render(
-      <TestComponent onChange={onChange} value="Hello" />
+      <TestComponent onChange={onChange} value="Hello" />,
     );
 
     rerender(<TestComponent onChange={onChange} value="Hello" />);

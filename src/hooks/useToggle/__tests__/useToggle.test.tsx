@@ -1,25 +1,25 @@
-import { act, renderHook } from "@testing-library/react";
+import { act, renderHook } from '@testing-library/react';
 
-import { useToggle } from "..";
+import { useToggle } from '..';
 
-describe("useToggle", () => {
-  test("should use toggle be ok", () => {
+describe('useToggle', () => {
+  test('should use toggle be ok', () => {
     const { result } = renderHook(() => useToggle());
     const [value, toggle, setValue] = result.current;
 
     expect(value).toBe(false);
-    expect(typeof toggle).toBe("function");
-    expect(typeof setValue).toBe("function");
+    expect(typeof toggle).toBe('function');
+    expect(typeof setValue).toBe('function');
   });
 
-  test("should default value works", () => {
+  test('should default value works', () => {
     const { result } = renderHook(() => useToggle(true));
     const [value] = result.current;
 
     expect(value).toBe(true);
   });
 
-  test("setValue should mutate the value", () => {
+  test('setValue should mutate the value', () => {
     const { result } = renderHook(() => useToggle());
     const [, , setValue] = result.current;
 
@@ -32,13 +32,13 @@ describe("useToggle", () => {
     expect(result.current[0]).toBe(true);
 
     act(() => {
-      setValue((prev) => !prev);
+      setValue(prev => !prev);
     });
 
     expect(result.current[0]).toBe(false);
   });
 
-  test("toggle should mutate the value", () => {
+  test('toggle should mutate the value', () => {
     const { result } = renderHook(() => useToggle());
     const [, toggle] = result.current;
 

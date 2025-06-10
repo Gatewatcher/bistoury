@@ -1,7 +1,7 @@
-import { useCallback, useRef } from "react";
+import { useCallback, useRef } from 'react';
 
-export const ERROR_NOT_AVAILABLE = "Clipboard is not available";
-export const ERROR_UNKNOWN = "Unknown error";
+export const ERROR_NOT_AVAILABLE = 'Clipboard is not available';
+export const ERROR_UNKNOWN = 'Unknown error';
 
 export type UseCopyToClipboardOptions = {
   onError?: (reason: string) => void;
@@ -10,7 +10,7 @@ export type UseCopyToClipboardOptions = {
 
 export const useCopyToClipboard = (
   clipText: string,
-  { onError = () => {}, onSuccess = () => {} }: UseCopyToClipboardOptions = {}
+  { onError = () => {}, onSuccess = () => {} }: UseCopyToClipboardOptions = {},
 ) => {
   const api = {
     clipText,

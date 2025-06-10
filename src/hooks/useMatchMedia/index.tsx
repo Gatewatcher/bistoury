@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export const useMatchMedia = (
   query: string,
-  onMatches: (event: MediaQueryListEvent) => void = () => {}
+  onMatches: (event: MediaQueryListEvent) => void = () => {},
 ) => {
   const [matches, setMatches] = useState(window.matchMedia(query).matches);
   useEffect(() => {
@@ -10,9 +10,9 @@ export const useMatchMedia = (
       onMatches(e);
       setMatches(e.matches);
     };
-    window.matchMedia(query).addEventListener("change", handler);
+    window.matchMedia(query).addEventListener('change', handler);
     return () => {
-      window.matchMedia(query).removeEventListener("change", handler);
+      window.matchMedia(query).removeEventListener('change', handler);
     };
   }, [query, onMatches]);
   return [matches, setMatches];

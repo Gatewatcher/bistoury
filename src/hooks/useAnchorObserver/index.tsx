@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 
-import { useOnWindowResize } from "./../useOnWindowResize";
-import { consoleDebug } from "./../../utils-log";
+import { consoleDebug } from './../../utils-log';
+import { useOnWindowResize } from './../useOnWindowResize';
 
 type OnMutationFunction = {
   (bounding: DOMRect): void;
@@ -10,11 +10,11 @@ type OnMutationFunction = {
 const DEFAULT_ON_MUTATION = () => {};
 
 export const useAnchorObserver = (
-  anchorId = "",
-  onMutation: OnMutationFunction = DEFAULT_ON_MUTATION
+  anchorId = '',
+  onMutation: OnMutationFunction = DEFAULT_ON_MUTATION,
 ) => {
   if (!anchorId) {
-    throw new Error("Anchor ID is required.");
+    throw new Error('Anchor ID is required.');
   }
 
   const getAnchorBounding = useCallback(() => {
@@ -38,7 +38,7 @@ export const useAnchorObserver = (
   useEffect(() => {
     const elementToObserve = document.getElementById(anchorId);
     if (!elementToObserve) {
-      consoleDebug("useAnchorObserver: element to observe not found !");
+      consoleDebug('useAnchorObserver: element to observe not found !');
       return;
     }
 

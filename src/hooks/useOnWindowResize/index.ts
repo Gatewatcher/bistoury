@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-import { useAsyncDebounce } from "..";
+import { useAsyncDebounce } from '..';
 
 export type UseOnWindowResizeOptions = {
   delay?: number;
@@ -12,13 +12,13 @@ const defaultOptions: UseOnWindowResizeOptions = {
 
 export const useOnWindowResize = (
   onWindowResize: (event: Event) => void,
-  options: UseOnWindowResizeOptions = defaultOptions
+  options: UseOnWindowResizeOptions = defaultOptions,
 ) => {
   const cb = onWindowResize;
   const debouncedCb = useAsyncDebounce(cb, options.delay);
 
   useEffect(() => {
-    window.addEventListener("resize", debouncedCb);
-    return () => void window.removeEventListener("resize", debouncedCb);
+    window.addEventListener('resize', debouncedCb);
+    return () => void window.removeEventListener('resize', debouncedCb);
   }, [debouncedCb]);
 };

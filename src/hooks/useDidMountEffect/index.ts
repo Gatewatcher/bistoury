@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useRef } from 'react';
 
 export const useDidMountEffect = (func: () => void, deps: any[]) => {
   const didMount = useRef(false);

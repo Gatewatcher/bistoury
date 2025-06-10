@@ -1,7 +1,7 @@
-import { useLayoutEffect, useState } from "react";
-import * as React from "react";
+import { useLayoutEffect, useState } from 'react';
+import * as React from 'react';
 
-import { first } from "./../../utils-lang";
+import { first } from './../../utils-lang';
 
 export const useOverflowObserver = (ref: React.RefObject<HTMLElement>) => {
   const [truncated, setTruncated] = useState(false);

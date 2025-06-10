@@ -1,24 +1,25 @@
-import { useCallback, useEffect, useRef } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useCallback, useEffect, useRef } from 'react';
 
 interface useInputFocusOptions {
-  cursorPosition?: "start" | "end" | "select";
+  cursorPosition?: 'start' | 'end' | 'select';
   autofocus?: boolean;
 }
 
 export const useInputFocus = (
-  options: useInputFocusOptions = {}
+  options: useInputFocusOptions = {},
 ): [React.RefObject<any>, () => void] => {
   const { cursorPosition, autofocus } = Object.assign(
-    { cursorPosition: "end" },
-    options
+    { cursorPosition: 'end' },
+    options,
   );
 
   const ref = useRef<any>(null);
   const focus = useCallback(() => {
     if (ref.current) {
       const length = ref.current.value.length;
-      const rangeStart = cursorPosition === "end" ? length : 0;
-      const rangeEnd = cursorPosition === "start" ? 0 : length;
+      const rangeStart = cursorPosition === 'end' ? length : 0;
+      const rangeEnd = cursorPosition === 'start' ? 0 : length;
       ref.current.setSelectionRange(rangeStart, rangeEnd);
       ref.current.focus();
     }

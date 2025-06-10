@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 // Source : https://practicalrescript.com/rescript-vs-typescript-concurrent-queue/
 // adapted to our needs
 type QueueOpts = {

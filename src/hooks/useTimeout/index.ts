@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useCallback, useEffect, useRef } from 'react';
 
 type TimeoutId = ReturnType<typeof setTimeout>;
 
@@ -27,7 +28,7 @@ export const useTimeout = (): [(...args: any) => void, () => void] => {
     () => () => {
       if (timeout.current) clearTimeout(timeout.current);
     },
-    []
+    [],
   );
 
   return [set, clear];

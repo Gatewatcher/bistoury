@@ -1,5 +1,5 @@
 export class HttpError extends Error {
-  readonly name = "HttpError";
+  readonly name = 'HttpError';
   readonly statusCode: number;
   readonly statusText: string;
   readonly response: Response;

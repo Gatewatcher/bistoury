@@ -1,6 +1,6 @@
-import { isFunction } from "./../utils-lang";
-
-import { ApiError } from ".";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ApiError } from '.';
+import { isFunction } from './../utils-lang';
 
 type Options = {
   onSuccess?: () => void;
@@ -10,7 +10,7 @@ type Options = {
 
 const fileToURI = (file: File | Blob) => {
   if (!isFunction(window.URL.createObjectURL)) {
-    throw new Error("window.URL.createObjectURL is not supported.");
+    throw new Error('window.URL.createObjectURL is not supported.');
   }
 
   return window.URL.createObjectURL(file);
@@ -19,14 +19,14 @@ const fileToURI = (file: File | Blob) => {
 /**
  * @deprecated please use `withObjectUrlFromFile()` and `saveFileAtUrl()`
  */
-export const downloadURI = (uri: string, name = "") => {
-  const link = document.createElement("a");
+export const downloadURI = (uri: string, name = '') => {
+  const link = document.createElement('a');
   link.href = uri;
   link.download = name;
   link.click();
 
   if (!isFunction(window.URL.revokeObjectURL)) {
-    throw new Error("window.URL.revokeObjectURL is not supported.");
+    throw new Error('window.URL.revokeObjectURL is not supported.');
   }
 
   window.URL.revokeObjectURL(uri);
@@ -39,9 +39,9 @@ export const download = async (
   url: string | File,
   name?: string,
   fetchOptions?: RequestInit,
-  downloadOptions?: Options
+  downloadOptions?: Options,
 ) => {
-  if (typeof url === "string") {
+  if (typeof url === 'string') {
     try {
       const response = await fetch(url, fetchOptions);
       if (response.status >= 400 && response.status < 600) {
@@ -56,9 +56,9 @@ export const download = async (
       const uri = fileToURI(blob);
 
       const contentDisposition =
-        response.headers.get("Content-Disposition") || "";
+        response.headers.get('Content-Disposition') || '';
 
-      const filename = name || contentDisposition.split("filename=")[1];
+      const filename = name || contentDisposition.split('filename=')[1];
 
       downloadURI(uri, filename);
       downloadOptions?.onSuccess?.();
@@ -81,23 +81,23 @@ export const download = async (
 export const probeRequest = (
   url: string,
   options?: Options,
-  fetchOptions?: RequestInit
+  fetchOptions?: RequestInit,
 ) => {
   return fetch(url, fetchOptions)
-    .then(async (response) => {
+    .then(async response => {
       if (!response.ok) {
         const detail = (await response.json())?.detail;
         const error: ApiError = {
           statusCode: response.status,
-          detail: detail || "Error occured during fetch",
+          detail: detail || 'Error occured during fetch',
         };
         throw error;
       }
       return response.body;
     })
-    .then((body) => {
+    .then(body => {
       if (body === null) {
-        throw new Error("No body returned");
+        throw new Error('No body returned');
       }
       const reader = body?.getReader();
       reader?.read().then(({ done, value }) => {
@@ -106,7 +106,7 @@ export const probeRequest = (
         }
       });
     })
-    .catch((err) => {
+    .catch(err => {
       console.error(err);
       options?.onError?.(err);
     })
@@ -122,7 +122,7 @@ export const downloadWithProbing = (
   url: string,
   name?: string,
   fetchOptions?: RequestInit,
-  probeRequestOptions?: Options
+  probeRequestOptions?: Options,
 ) => {
   const probeOptions: Options = {
     ...probeRequestOptions,

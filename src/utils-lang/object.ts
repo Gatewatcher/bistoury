@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { isDefined } from '.';
 
 export type AnyRecord = { [key: string]: any };

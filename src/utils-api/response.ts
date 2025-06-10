@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 export interface ApiResponse<T = any> {
   count: number;
   next: string;
@@ -26,8 +28,8 @@ export const formatApiError = (error?: ApiError | null): string => {
   return error?.detail
     ? errorDetailAsString(error.detail)
     : !Object.keys(error || '')?.length
-    ? 'Unexpected error'
-    : JSON.stringify(error, null, 2);
+      ? 'Unexpected error'
+      : JSON.stringify(error, null, 2);
 };
 
 export const formatApiErrorList = (error?: any): string[] => {

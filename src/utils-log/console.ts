@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { logConfig } from './config';
 
 export const shouldLog = () => {

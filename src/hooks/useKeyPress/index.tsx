@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-export const useKeyPressed = (targetKey: KeyboardEvent["key"]) => {
+export const useKeyPressed = (targetKey: KeyboardEvent['key']) => {
   const [keyPressed, setKeyPressed] = useState(false);
 
   const downHandler = (event: KeyboardEvent) => {
@@ -12,12 +12,12 @@ export const useKeyPressed = (targetKey: KeyboardEvent["key"]) => {
   };
 
   useEffect(() => {
-    window.addEventListener("keydown", downHandler);
-    window.addEventListener("keyup", upHandler);
+    window.addEventListener('keydown', downHandler);
+    window.addEventListener('keyup', upHandler);
 
     return () => {
-      window.removeEventListener("keydown", downHandler);
-      window.removeEventListener("keyup", upHandler);
+      window.removeEventListener('keydown', downHandler);
+      window.removeEventListener('keyup', upHandler);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

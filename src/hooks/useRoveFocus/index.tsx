@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 
 export type UseRoveFocusOptions = {
   preventDefault?: boolean;
@@ -10,7 +10,7 @@ const DEFAULT_OPTIONS: UseRoveFocusOptions = {
 
 export const useRoveFocus = (
   size: number,
-  options: UseRoveFocusOptions = DEFAULT_OPTIONS
+  options: UseRoveFocusOptions = DEFAULT_OPTIONS,
 ) => {
   const [currentFocus, setCurrentFocus] = useState(0);
   const [currentSize, setCurrentSize] = useState(size);
@@ -18,23 +18,23 @@ export const useRoveFocus = (
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      if (e.code === "ArrowDown") {
+      if (e.code === 'ArrowDown') {
         preventDefault && e.preventDefault();
         setCurrentFocus(
-          currentFocus === currentSize - 1 ? 0 : currentFocus + 1
+          currentFocus === currentSize - 1 ? 0 : currentFocus + 1,
         );
-      } else if (e.code === "ArrowUp") {
+      } else if (e.code === 'ArrowUp') {
         preventDefault && e.preventDefault();
         setCurrentFocus(currentFocus <= 0 ? currentSize - 1 : currentFocus - 1);
       }
     },
-    [currentSize, currentFocus, setCurrentFocus, preventDefault]
+    [currentSize, currentFocus, setCurrentFocus, preventDefault],
   );
 
   useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown, false);
+    document.addEventListener('keydown', handleKeyDown, false);
     return () => {
-      document.removeEventListener("keydown", handleKeyDown, false);
+      document.removeEventListener('keydown', handleKeyDown, false);
     };
   }, [handleKeyDown]);
 

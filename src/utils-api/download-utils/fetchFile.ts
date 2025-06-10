@@ -1,9 +1,9 @@
-import { HttpError } from "./HttpError";
-import { FetchFileResult, RequestOptions } from "./types";
+import { HttpError } from './HttpError';
+import { FetchFileResult, RequestOptions } from './types';
 
 export const fetchFile = async (
   url: string,
-  { method = "GET", ...options }: RequestOptions = {}
+  { method = 'GET', ...options }: RequestOptions = {},
 ): Promise<FetchFileResult> => {
   const response = await fetch(url, {
     method,
@@ -11,12 +11,12 @@ export const fetchFile = async (
   });
 
   if (!response.ok) {
-    throw new HttpError("File fetching failed.", response);
+    throw new HttpError('File fetching failed.', response);
   }
 
   const data = await response.blob();
-  const contentDisposition = response.headers.get("Content-Disposition") ?? "";
-  const name = contentDisposition.split("filename=")[1];
+  const contentDisposition = response.headers.get('Content-Disposition') ?? '';
+  const name = contentDisposition.split('filename=')[1];
 
   return {
     data,

@@ -1,9 +1,9 @@
-import { HttpError } from "./HttpError";
-import { RequestOptions } from "./types";
+import { HttpError } from './HttpError';
+import { RequestOptions } from './types';
 
 export const probeFetch = async (
   url: string,
-  { method = "GET", ...options }: RequestOptions = {}
+  { method = 'GET', ...options }: RequestOptions = {},
 ): Promise<void> => {
   const response = await fetch(url, {
     method,
@@ -11,11 +11,11 @@ export const probeFetch = async (
   });
 
   if (!response.ok) {
-    throw new HttpError("Probing failed.", response);
+    throw new HttpError('Probing failed.', response);
   }
 
   if (!response.body) {
-    throw new Error("Could not read response body.");
+    throw new Error('Could not read response body.');
   }
 
   const reader = response.body.getReader();

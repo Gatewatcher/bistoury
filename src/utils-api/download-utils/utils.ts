@@ -1,9 +1,9 @@
 export const withObjectUrlFromFile = (
   file: Blob,
-  callback: (objectUrl: string) => void
+  callback: (objectUrl: string) => void,
 ) => {
   if (!window.URL.createObjectURL) {
-    throw new Error("window.URL.createObjectURL is not supported.");
+    throw new Error('window.URL.createObjectURL is not supported.');
   }
 
   let objectUrl: string | null = null;
@@ -19,8 +19,8 @@ export const withObjectUrlFromFile = (
   }
 };
 
-export const saveFileAtUrl = (url: string, name = "") => {
-  const link = document.createElement("a");
+export const saveFileAtUrl = (url: string, name = '') => {
+  const link = document.createElement('a');
   link.href = url;
   link.download = name;
   link.click();

@@ -1,4 +1,5 @@
-import { useCallback, useRef } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useCallback, useRef } from 'react';
 
 export const useGetLatest = (obj: any) => {
   const ref = useRef();
@@ -39,6 +40,6 @@ export const useAsyncDebounce = (defaultFn: any, defaultWait = 0) => {
 
       return debounceRef.current.promise;
     },
-    [getDefaultFn, getDefaultWait]
+    [getDefaultFn, getDefaultWait],
   );
 };

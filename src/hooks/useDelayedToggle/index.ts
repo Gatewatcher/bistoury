@@ -1,7 +1,7 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState } from 'react';
 
-import { useTimeout } from "./../useTimeout";
-import { isNumber } from "./../../utils-lang";
+import { isNumber } from './../../utils-lang';
+import { useTimeout } from './../useTimeout';
 
 type DelayOption =
   | number
@@ -12,7 +12,7 @@ type DelayOption =
 
 export const useDelayedToggle = (
   initial: boolean,
-  delay: DelayOption = 0
+  delay: DelayOption = 0,
 ): [boolean, (value: boolean, force?: boolean) => void] => {
   const [state, setState] = useState(initial);
   const [setTimeout, clearTimeout] = useTimeout();
@@ -30,7 +30,7 @@ export const useDelayedToggle = (
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [delay]
+    [delay],
   );
 
   return [state, setter];

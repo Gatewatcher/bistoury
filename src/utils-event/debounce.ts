@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 // Adapted from https://github.com/component/debounce/blob/master/index.js
 
 export const debounce = (
   func: () => void,
   wait: number,
-  immediate?: boolean
+  immediate?: boolean,
 ) => {
   let timeout: ReturnType<typeof setTimeout> | null;
   let args: any;
