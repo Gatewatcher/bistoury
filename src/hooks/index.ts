@@ -1,6 +1,9 @@
 import { useAnchorObserver } from './useAnchorObserver';
 import { useAsyncDebounce } from './useAsyncDebounce';
-import { useCopyToClipboard } from './useCopyToClipboard';
+import {
+  UseCopyToClipboardOptions,
+  useCopyToClipboard,
+} from './useCopyToClipboard';
 import { useDebouncedCallback } from './useDebouncedCallback';
 import { useDelayedRender } from './useDelayedRender';
 import { useDelayedToggle } from './useDelayedToggle';
@@ -27,6 +30,7 @@ import { useUniqueId } from './useUniqueId';
 import { useWatchValue } from './useWatchValue';
 import { useWindowDimensions } from './useWindowDimensions';
 
+export type { UseCopyToClipboardOptions };
 export {
   useAnchorObserver,
   useAsyncDebounce,
