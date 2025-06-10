@@ -1,3 +1,13 @@
+# [1.1.0](https://github.com/Gatewatcher/bistoury/compare/v1.0.13...v1.1.0) (2025-06-10)
+
+
+### Features
+
+* **utils:** fix ci ([#11](https://github.com/Gatewatcher/bistoury/issues/11)) ([fea7ddc](https://github.com/Gatewatcher/bistoury/commit/fea7ddcb5b203a70a125a48ade9dbcee941292c8))
+* **utils:** fix some ([#11](https://github.com/Gatewatcher/bistoury/issues/11)) ([6873973](https://github.com/Gatewatcher/bistoury/commit/68739736f978a830701e32356dd942798bda82bd))
+* **utils:** fix some ([#11](https://github.com/Gatewatcher/bistoury/issues/11)) ([8b97795](https://github.com/Gatewatcher/bistoury/commit/8b9779507f9296e1e6714d8a91ddb32d07bc1ec0))
+* **utils:** remove circular deps ([#11](https://github.com/Gatewatcher/bistoury/issues/11)) ([da280ac](https://github.com/Gatewatcher/bistoury/commit/da280acd221cb5a9765b35f63621bda030bfa60e))
+
 ## [1.0.13](https://github.com/Gatewatcher/bistoury/compare/v1.0.12...v1.0.13) (2025-06-06)
 
 
