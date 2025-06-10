@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Gatewatcher/bistoury/compare/v1.1.0...v1.1.1) (2025-06-10)
+
+
+### Bug Fixes
+
+* **hooks:** copyToClipboard ([06e8cd0](https://github.com/Gatewatcher/bistoury/commit/06e8cd018e5031bb09b7915a658f0bb271f33207))
+
 # [1.1.0](https://github.com/Gatewatcher/bistoury/compare/v1.0.13...v1.1.0) (2025-06-10)
 
 
