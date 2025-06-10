@@ -130,11 +130,11 @@ export const getValue = <T>(
   object: AnyRecord,
   path: string | string[],
   defaultValue?: T,
-): T | undefined => {
+): AnyRecord | T | undefined => {
   if (!path) return;
 
   const pathArray = Array.isArray(path) ? path : path.match(/([^[.\]])+/g);
-  const result = pathArray.reduce((prev, key) => prev && prev[key], object);
+  const result = pathArray?.reduce((prev, key) => prev && prev[key], object);
 
   return isDefined(result) ? result : defaultValue;
 };

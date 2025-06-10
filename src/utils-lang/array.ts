@@ -107,7 +107,7 @@ export const range = ({ start = 0, stop, step = 1 }: RangeParams): number[] => {
 
   if (isEmpty) return [];
 
-  const result = [];
+  const result: number[] = [];
   for (let i = start; step > 0 ? i < stop : i > stop; i += step) {
     result.push(i);
   }
@@ -124,7 +124,7 @@ export const splitArrayBy = <T>(
       acc[predicate(item) ? 0 : 1].push(item);
       return acc;
     },
-    [[], []],
+    [[], []] as [T[], T[]],
   );
 };
 
