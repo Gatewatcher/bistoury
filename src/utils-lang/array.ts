@@ -1,4 +1,5 @@
-import { isFunction } from "./../utils-lang";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { isFunction } from './../utils-lang';
 
 export const areEqual = (arrayA: any[], arrayB: any[]): boolean => {
   if (arrayA.length !== arrayB.length) {
@@ -16,11 +17,11 @@ export const areEqual = (arrayA: any[], arrayB: any[]): boolean => {
 
 export const filterBy = <T>(
   array: T[],
-  filters: Record<string, boolean | ((params: any) => boolean)>
+  filters: Record<string, boolean | ((params: any) => boolean)>,
 ): T[] => {
   const filterKeys = Object.keys(filters);
-  return array.filter((item) => {
-    return filterKeys.every((key) => {
+  return array.filter(item => {
+    return filterKeys.every(key => {
       if (!isFunction(filters[key])) {
         return filters[key] ?? true;
       }
@@ -47,27 +48,27 @@ export const first = <T>(array: T[] | undefined): T | null => {
 };
 
 export const maxValueOf = <T>(array: T[], accessor: (value: T) => number) => {
-  return Math.max(...array.map((o) => accessor(o)), 0);
+  return Math.max(...array.map(o => accessor(o)), 0);
 };
 
 export const toggleItem = <T>(arr: T[] | undefined, item: any) => {
   if (!arr) {
     return;
   }
-  return arr.includes(item) ? arr.filter((i) => i !== item) : [...arr, item];
+  return arr.includes(item) ? arr.filter(i => i !== item) : [...arr, item];
 };
 
 export const formatArray = (arr: string[], limit = 3) => {
   return arr.length > limit
-    ? `${arr.slice(0, limit).join(", ")}, ...`
-    : arr.join(", ");
+    ? `${arr.slice(0, limit).join(', ')}, ...`
+    : arr.join(', ');
 };
 
 export const insertIf = <T>(predicate: boolean, ...elements: T[]) =>
   predicate ? elements : [];
 
 export const unique = <T>(array: T[], key: keyof T) => {
-  return [...new Map(array.map((item) => [item[key], item])).values()];
+  return [...new Map(array.map(item => [item[key], item])).values()];
 };
 
 /**
@@ -99,7 +100,7 @@ export type RangeParams = {
 
 export const range = ({ start = 0, stop, step = 1 }: RangeParams): number[] => {
   if (step === 0) {
-    throw new RangeError("step cannot be equal to 0");
+    throw new RangeError('step cannot be equal to 0');
   }
 
   const isEmpty = (step > 0 && start >= stop) || (step < 0 && start <= stop);
@@ -116,14 +117,14 @@ export const range = ({ start = 0, stop, step = 1 }: RangeParams): number[] => {
 
 export const splitArrayBy = <T>(
   array: T[],
-  predicate: (item: T) => boolean
+  predicate: (item: T) => boolean,
 ): [T[], T[]] => {
   return array.reduce(
     (acc, item) => {
       acc[predicate(item) ? 0 : 1].push(item);
       return acc;
     },
-    [[], []]
+    [[], []],
   );
 };
 
@@ -132,13 +133,13 @@ const strictEquals = <T>(e1: T, e2: T): boolean => e1 === e2;
 export const mutuallyExclusive = <T>(
   array1: T[],
   array2: T[],
-  predicate = strictEquals<T>
+  predicate = strictEquals<T>,
 ): T[] => {
   const uniqueArray1 = array1.filter(
-    (e1) => array2.findIndex((e2) => predicate(e1, e2)) < 0
+    e1 => array2.findIndex(e2 => predicate(e1, e2)) < 0,
   );
   const uniqueArray2 = array2.filter(
-    (e2) => array1.findIndex((e1) => predicate(e2, e1)) < 0
+    e2 => array1.findIndex(e1 => predicate(e2, e1)) < 0,
   );
 
   return uniqueArray1.concat(uniqueArray2);
@@ -150,12 +151,12 @@ export const mutuallyExclusive = <T>(
 export const arrayDifference = <T>(
   arrayA: T[],
   arrayB: T[],
-  predicate = strictEquals<T>
-) => arrayA.filter((a) => arrayB.findIndex((b) => predicate(a, b)) < 0);
+  predicate = strictEquals<T>,
+) => arrayA.filter(a => arrayB.findIndex(b => predicate(a, b)) < 0);
 
 export const groupBy = <T, K extends string | number>(
   items: T[],
-  by: (item: T) => K
+  by: (item: T) => K,
 ): Partial<Record<K, T[]>> => {
   const groups: Partial<Record<K, T[]>> = {};
 

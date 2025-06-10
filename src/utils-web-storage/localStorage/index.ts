@@ -1,11 +1,12 @@
-import { isDefined, isJSON } from "./../../utils-lang";
-import { consoleDebug } from "./../../utils-log";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { isDefined, isJSON } from './../../utils-lang';
+import { consoleDebug } from './../../utils-log';
 
 export const isSupported = (): boolean => {
   try {
-    return "localStorage" in window && isDefined(window.localStorage);
+    return 'localStorage' in window && isDefined(window.localStorage);
   } catch (error) {
-    console.error("Error accessing localStorage:", error);
+    console.error('Error accessing localStorage:', error);
     return false;
   }
 };

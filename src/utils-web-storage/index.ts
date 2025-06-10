@@ -1,3 +1,3 @@
-export { get, isSupported, set } from "./localStorage";
+export { get, isSupported, set } from './localStorage';
 
-export { getCookie, setCookie, checkCookie } from "./cookie";
+export { getCookie, setCookie, checkCookie } from './cookie';

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 export const formatNumber = (
   value: number,
   { unit = '', min = 1e3 }: { unit?: string; min?: number } = {
