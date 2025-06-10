@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+gw generate:scripts:ci-e2e && git add .gitlab-ci-e2e-functional.yml
+npx --no-install lint-staged --config lint-staged.json
