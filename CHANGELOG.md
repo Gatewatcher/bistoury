@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Gatewatcher/bistoury/compare/v1.2.0...v1.2.1) (2025-06-11)
+
+
+### Bug Fixes
+
+* exports ([c5a627d](https://github.com/Gatewatcher/bistoury/commit/c5a627d7769da133bf32173ccd61fa1baa828974))
+
 # [1.2.0](https://github.com/Gatewatcher/bistoury/compare/v1.1.1...v1.2.0) (2025-06-11)
 
 
