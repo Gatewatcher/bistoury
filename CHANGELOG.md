@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Gatewatcher/bistoury/compare/v1.1.1...v1.2.0) (2025-06-11)
+
+
+### Features
+
+* add commonjs ([931dee6](https://github.com/Gatewatcher/bistoury/commit/931dee62a23d79a611981366f9644f1e9d0fdd43))
+
 ## [1.1.1](https://github.com/Gatewatcher/bistoury/compare/v1.1.0...v1.1.1) (2025-06-10)
 
 
