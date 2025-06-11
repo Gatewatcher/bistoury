@@ -23,6 +23,11 @@
       "import": "./dist/utils-api/index.es.js",
       "require": "./dist/utils-api/index.cjs.js"
     },
+    "./utils-dom": {
+      "types": "./dist/utils-dom/index.d.ts",
+      "import": "./dist/utils-dom/index.es.js",
+      "require": "./dist/utils-dom/index.cjs.js"
+    },
     "./utils-event": {
       "types": "./dist/utils-event/index.d.ts",
       "import": "./dist/utils-event/index.es.js",
@@ -61,6 +66,9 @@
       ],
       "utils-api": [
         "./dist/utils-api/index.d.ts"
+      ],
+      "utils-dom": [
+        "./dist/utils-dom/index.d.ts"
       ],
       "utils-event": [
         "./dist/utils-event/index.d.ts"
