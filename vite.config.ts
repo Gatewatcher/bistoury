@@ -12,6 +12,7 @@ export default defineConfig({
         'utils-event': path.resolve(__dirname, 'src/utils-event/index.ts'),
         'utils-lang': path.resolve(__dirname, 'src/utils-lang/index.ts'),
         'utils-log': path.resolve(__dirname, 'src/utils-log/index.ts'),
+        'utils-react': path.resolve(__dirname, 'src/utils-react/index.ts'),
         'utils-tests': path.resolve(__dirname, 'src/utils-tests/index.ts'),
         'utils-types': path.resolve(__dirname, 'src/utils-types/index.ts'),
         'utils-web-storage': path.resolve(
