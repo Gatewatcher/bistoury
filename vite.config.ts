@@ -8,6 +8,7 @@ export default defineConfig({
       entry: {
         hooks: path.resolve(__dirname, 'src/hooks/index.ts'),
         'utils-api': path.resolve(__dirname, 'src/utils-api/index.ts'),
+        'utils-dom': path.resolve(__dirname, 'src/utils-dom/index.ts'),
         'utils-event': path.resolve(__dirname, 'src/utils-event/index.ts'),
         'utils-lang': path.resolve(__dirname, 'src/utils-lang/index.ts'),
         'utils-log': path.resolve(__dirname, 'src/utils-log/index.ts'),
