@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Gatewatcher/bistoury/compare/v1.2.1...v1.3.0) (2025-06-11)
+
+
+### Features
+
+* **utils:** add dom utils ([#13](https://github.com/Gatewatcher/bistoury/issues/13)) ([#14](https://github.com/Gatewatcher/bistoury/issues/14)) ([2d06d99](https://github.com/Gatewatcher/bistoury/commit/2d06d9962659a703f033aadec6704659573d13d4))
+
 ## [1.2.1](https://github.com/Gatewatcher/bistoury/compare/v1.2.0...v1.2.1) (2025-06-11)
 
 
