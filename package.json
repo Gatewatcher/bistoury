@@ -67,6 +67,9 @@
       "utils-api": [
         "./dist/utils-api/index.d.ts"
       ],
+      "utils-dom": [
+        "./dist/utils-dom/index.d.ts"
+      ],
       "utils-event": [
         "./dist/utils-event/index.d.ts"
       ],
