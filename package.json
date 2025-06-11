@@ -43,6 +43,11 @@
       "import": "./dist/utils-log/index.es.js",
       "require": "./dist/utils-log/index.cjs.js"
     },
+    "./utils-react": {
+      "types": "./dist/utils-react/index.d.ts",
+      "import": "./dist/utils-react/index.es.js",
+      "require": "./dist/utils-react/index.cjs.js"
+    },
     "./utils-tests": {
       "types": "./dist/utils-tests/index.d.ts",
       "import": "./dist/utils-tests/index.es.js",
@@ -79,6 +84,9 @@
       "utils-log": [
         "./dist/utils-log/index.d.ts"
       ],
+      "utils-react": [
+        "./dist/utils-react/index.d.ts"
+      ],
       "utils-tests": [
         "./dist/utils-tests/index.d.ts"
       ],
@@ -94,23 +102,22 @@
     "dist"
   ],
   "scripts": {
-    "prepublish": "npm run build",
     "build": "vite build && tsc --emitDeclarationOnly",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
     "fmt": "prettier --write \"src/**/*.{js,jsx,cjs,ts,tsx,json,css,scss,md}\"",
-    "prepare": "husky install .husky",
     "lint:ts": "eslint . --ext=.ts,.tsx",
     "lint:ts:fix": "eslint . --ext=.ts,.tsx --fix",
     "lint": "npm run lint:ts",
-    "lint:fix": "npm run lint:ts:fix"
+    "lint:fix": "npm run lint:ts:fix",
+    "prepare": "husky install .husky",
+    "prepublish": "npm run build",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
   },
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "13.0.1",
-    "@semantic-release/exec": "7.1.0",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "11.0.3",
     "@semantic-release/npm": "12.0.1",
@@ -130,8 +137,6 @@
     "jsdom": "26.1.0",
     "lint-staged": "16.1.0",
     "react-router-dom": "7.6.2",
-    "semantic-release": "24.2.5",
-    "semantic-release-plugin-update-version-in-files": "2.0.0",
     "typescript": "5.8.3",
     "vite": "6.3.5",
     "vite-plugin-dts": "4.5.4",
