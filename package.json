@@ -13,42 +13,42 @@
   },
   "type": "module",
   "exports": {
-    "hooks": {
+    "./hooks": {
       "types": "./dist/hooks/index.d.ts",
       "import": "./dist/hooks/index.es.js",
       "require": "./dist/hooks/index.cjs.js"
     },
-    "utils-api": {
+    "./utils-api": {
       "types": "./dist/utils-api/index.d.ts",
       "import": "./dist/utils-api/index.es.js",
       "require": "./dist/utils-api/index.cjs.js"
     },
-    "utils-event": {
+    "./utils-event": {
       "types": "./dist/utils-event/index.d.ts",
       "import": "./dist/utils-event/index.es.js",
       "require": "./dist/utils-event/index.cjs.js"
     },
-    "utils-lang": {
+    "./utils-lang": {
       "types": "./dist/utils-lang/index.d.ts",
       "import": "./dist/utils-lang/index.es.js",
       "require": "./dist/utils-lang/index.cjs.js"
     },
-    "utils-log": {
+    "./utils-log": {
       "types": "./dist/utils-log/index.d.ts",
       "import": "./dist/utils-log/index.es.js",
       "require": "./dist/utils-log/index.cjs.js"
     },
-    "utils-tests": {
+    "./utils-tests": {
       "types": "./dist/utils-tests/index.d.ts",
       "import": "./dist/utils-tests/index.es.js",
       "require": "./dist/utils-tests/index.cjs.js"
     },
-    "utils-types": {
+    "./utils-types": {
       "types": "./dist/utils-types/index.d.ts",
       "import": "./dist/utils-types/index.es.js",
       "require": "./dist/utils-types/index.cjs.js"
     },
-    "utils-web-storage": {
+    "./utils-web-storage": {
       "types": "./dist/utils-web-storage/index.d.ts",
       "import": "./dist/utils-web-storage/index.es.js",
       "require": "./dist/utils-web-storage/index.cjs.js"
