@@ -1,8 +1,18 @@
+import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
+  plugins: [
+    dts({
+      entryRoot: 'src',
+      outDir: 'dist',
+    }),
+    tsconfigPaths(),
+    react(),
+  ],
   build: {
     lib: {
       entry: {
@@ -25,18 +35,12 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
-      external: [],
+      external: ['react'],
+      output: {
+        globals: {
+          react: 'React',
+        },
+      },
     },
-  },
-  plugins: [
-    dts({
-      entryRoot: 'src',
-      outDir: 'dist',
-    }),
-  ],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    include: ['src/**/*.test.ts'],
   },
 });

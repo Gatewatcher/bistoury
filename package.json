@@ -129,6 +129,7 @@
     "@types/node": "22.15.29",
     "@typescript-eslint/eslint-plugin": "6.7.2",
     "@typescript-eslint/parser": "6.7.2",
+    "@vitejs/plugin-react": "4.5.2",
     "@vitest/ui": "3.2.1",
     "eslint": "8.50.0",
     "eslint-plugin-react": "7.37.5",
@@ -140,6 +141,7 @@
     "typescript": "5.8.3",
     "vite": "6.3.5",
     "vite-plugin-dts": "4.5.4",
+    "vite-tsconfig-paths": "5.1.4",
     "vitest": "3.2.1"
   }
 }
