@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/Gatewatcher/bistoury/compare/v1.4.0...v1.5.0) (2025-06-12)
+
+
+### Features
+
+* **vite:** add react build plugin ([6c38199](https://github.com/Gatewatcher/bistoury/commit/6c38199359ebd37db2452c7a9787959b324621e4))
+
 # [1.4.0](https://github.com/Gatewatcher/bistoury/compare/v1.3.0...v1.4.0) (2025-06-11)
 
 
