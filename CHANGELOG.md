@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/Gatewatcher/bistoury/compare/v1.6.0...v1.7.0) (2025-06-17)
+
+
+### Features
+
+* add utils-url ([0f9aba7](https://github.com/Gatewatcher/bistoury/commit/0f9aba7518141ecd93b02f2ef50fdbc88e12ba23))
+
 # [1.6.0](https://github.com/Gatewatcher/bistoury/compare/v1.5.0...v1.6.0) (2025-06-17)
 
 
