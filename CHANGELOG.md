@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/Gatewatcher/bistoury/compare/v1.5.0...v1.6.0) (2025-06-17)
+
+
+### Features
+
+* add utils-date ([ecb7b59](https://github.com/Gatewatcher/bistoury/commit/ecb7b5928d7cc9920de3c8320b988a99140f58e6))
+
 # [1.5.0](https://github.com/Gatewatcher/bistoury/compare/v1.4.0...v1.5.0) (2025-06-12)
 
 
