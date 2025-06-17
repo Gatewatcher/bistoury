@@ -192,7 +192,9 @@ export const buildEndpointWithVariables = (
   path: string,
   variables: (string | number)[],
 ) => {
-  return variables.reduce((acc: string, variable) => {
-    return acc.replace('*', variable.toString());
-  }, path);
+  return variables
+    .map(variable => variable.toString())
+    .reduce((acc: string, variable) => {
+      return acc.replace('*', variable);
+    }, path);
 };

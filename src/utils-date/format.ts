@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
+import { INPUT_DATE_FORMAT } from './constants';
 import './locales';
 
 dayjs.extend(relativeTime);
@@ -68,4 +69,8 @@ export const format = (date: DateInput, format, options?: FormatOptions) => {
   return locale
     ? dayjs(date).locale(locale).format(format)
     : dayjs(date).format(format);
+};
+
+export const formatDateInput = (date: DateInput) => {
+  return dayjs(date).format(INPUT_DATE_FORMAT);
 };

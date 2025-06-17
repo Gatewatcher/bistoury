@@ -49,6 +49,7 @@ export {
   includesIgnoreAccentCase,
   isString,
   pascalCase,
+  snakeCase,
   removeAccents,
   toLowerCase,
   toUpperCase,
@@ -60,3 +61,5 @@ export { isURLSearchParams } from './urlSearchParams';
 export { setEqual } from './set';
 
 export { formatBytes } from './bytes';
+
+export { isBlob, isFile } from './files';

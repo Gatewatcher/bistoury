@@ -8,8 +8,8 @@ import {
 import { ApiError, DefaultResponseError } from './../utils-api';
 import { TestId, TestIdLoading } from './../utils-types';
 
-export const suffixTestId = (baseId: TestId, suffix: TestId): TestId =>
-  `${baseId}-${suffix}`;
+export const suffixTestId = (baseId: TestId, ...suffixes: TestId[]): TestId =>
+  `${baseId}-${suffixes.join('-')}`;
 
 export const expectToBeVisibleInTheDocument = async (
   testId: TestId | RegExp,

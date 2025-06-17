@@ -29,6 +29,18 @@ export const pascalCase = (str: string): string => {
   return `${camelCased.charAt(0).toUpperCase()}${camelCased.slice(1)}`;
 };
 
+export const splitWords = (sentence: string): string[] => {
+  return sentence.match(
+    /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g,
+  );
+};
+
+export const snakeCase = (str: string): string => {
+  return splitWords(str)
+    .map(x => x.toLowerCase())
+    .join('_');
+};
+
 export const toUpperCase = <T extends string>(value: T): Uppercase<T> => {
   return value.toUpperCase() as Uppercase<T>;
 };
