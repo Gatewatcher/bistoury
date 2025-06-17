@@ -26,6 +26,7 @@ export default defineConfig({
         'utils-react': path.resolve(__dirname, 'src/utils-react/index.ts'),
         'utils-tests': path.resolve(__dirname, 'src/utils-tests/index.ts'),
         'utils-types': path.resolve(__dirname, 'src/utils-types/index.ts'),
+        'utils-url': path.resolve(__dirname, 'src/utils-url/index.ts'),
         'utils-web-storage': path.resolve(
           __dirname,
           'src/utils-web-storage/index.ts',
