@@ -7,6 +7,10 @@ import { useIdle } from '..';
 describe('useIdle', () => {
   const user = userEvent.setup();
 
+  const wrapper = () => {
+    return <div data-testid="outside-div">clickable div</div>;
+  };
+
   const renderUseIdle = (...args: Partial<Parameters<typeof useIdle>>) => {
     const { rerender, ...rest } = renderHook(args => useIdle(...args), {
       initialProps: args,
@@ -29,13 +33,19 @@ describe('useIdle', () => {
   });
 
   it('should not be idle after click on document body div', async () => {
-    const isIdleHook = renderUseIdle({
-      initialState: true,
-      timeout: 0,
-      debounceTimeout: 0,
-    });
+    const isIdleHook = renderHook(
+      () =>
+        useIdle({
+          initialState: true,
+          timeout: 0,
+          debounceTimeout: 0,
+        }),
+      {
+        wrapper,
+      },
+    );
     expect(isIdleHook.result.current).toBe(true);
-    await user.click(document.body.getElementsByTagName('div')[0]);
+    await user.click(document.querySelector('[data-testid="outside-div"]')!);
     expect(isIdleHook.result.current).toBe(false);
   });
 
