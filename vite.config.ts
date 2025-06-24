@@ -13,6 +13,12 @@ export default defineConfig({
     tsconfigPaths(),
     react(),
   ],
+  test: {
+    setupFiles: './vitest.setup.ts',
+    environment: 'jsdom',
+    globals: true,
+    include: ['src/**/*.test.ts'],
+  },
   build: {
     lib: {
       entry: {
