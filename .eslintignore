@@ -6,3 +6,4 @@ public
 gateway
 package-lock.json
 package.json
+*.md
