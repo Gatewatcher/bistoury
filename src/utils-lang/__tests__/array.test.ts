@@ -27,58 +27,58 @@ describe('Lang array utils tests', () => {
   it('should filter an array of objects by custom predicates', () => {
     const results = [
       {
-        id: '2020-09-01T07:12:35.868Z',
-        name: '414767060_gcap-howard.com',
-        date: '2020-09-01T07:12:35.868Z',
+        id: '2020-09-01',
+        name: '4147_test-test.com',
+        date: '2020-09-01',
         gcap: {
           id: '1',
-          fqdn: 'gcap-1.gatewatcher.com',
+          fqdn: 'test-1.test.com',
           is_paired: true,
         },
-        description: '414767060_gcap-howard.com',
-        src_ip: '52.206.96.38',
-        dest_ip: '48.203.147.134',
+        description: '4147_test-test.com',
+        src_ip: '127.0.0.1',
+        dest_ip: '127.0.0.2',
         risk: 9,
-        type: 'shellcode',
+        type: 'test',
       },
       {
-        id: '2020-09-01T07:12:39.856Z',
-        name: 'ET TROJAN Windows executable base64 encoded',
-        date: '2020-09-01T07:12:35.868Z',
+        id: '2020-09-01T07',
+        name: 'base64 encoded',
+        date: '2020-09-01',
         gcap: {
           id: '1',
-          fqdn: 'gcap-2.gatewatcher.com',
+          fqdn: 'test-2.test.com',
           is_paired: true,
         },
-        description: 'A Network Trojan was detected',
-        src_ip: '161.238.218.96',
-        dest_ip: '52.206.96.38',
+        description: 'Trojan detected',
+        src_ip: '127.0.0.3',
+        dest_ip: '127.0.0.1',
         risk: 8,
-        type: 'sigflow',
+        type: 'test2',
       },
     ];
 
     const filters = {
       gcap: (gcap: any) => gcap.id === '1',
-      src_ip: (_src_ip: string) => '52.206.96.38'.includes(_src_ip),
+      src_ip: (_src_ip: string) => '127.0.0.1'.includes(_src_ip),
       no_fn: true,
     };
     const filtered = filterBy(results, filters);
     const expected = [
       {
-        id: '2020-09-01T07:12:35.868Z',
-        name: '414767060_gcap-howard.com',
-        date: '2020-09-01T07:12:35.868Z',
+        id: '2020-09-01',
+        name: '4147_test-test.com',
+        date: '2020-09-01',
         gcap: {
           id: '1',
-          fqdn: 'gcap-1.gatewatcher.com',
+          fqdn: 'test-1.test.com',
           is_paired: true,
         },
-        description: '414767060_gcap-howard.com',
-        src_ip: '52.206.96.38',
-        dest_ip: '48.203.147.134',
+        description: '4147_test-test.com',
+        src_ip: '127.0.0.1',
+        dest_ip: '127.0.0.2',
         risk: 9,
-        type: 'shellcode',
+        type: 'test',
       },
     ];
     expect(filtered).toStrictEqual(expected);
