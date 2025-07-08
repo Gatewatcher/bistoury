@@ -1,3 +1,11 @@
+## [1.7.4](https://github.com/Gatewatcher/bistoury/compare/v1.7.3...v1.7.4) (2025-07-08)
+
+
+### Bug Fixes
+
+* change some ([4b9bb5a](https://github.com/Gatewatcher/bistoury/commit/4b9bb5a04a3a3b29f67d83bd393d8c038d958347))
+* release ([072bc2a](https://github.com/Gatewatcher/bistoury/commit/072bc2a328c6d9674bd054d3e39e030a65d15487))
+
 ## [1.7.3](https://github.com/Gatewatcher/bistoury/compare/v1.7.2...v1.7.3) (2025-06-24)
 
 
