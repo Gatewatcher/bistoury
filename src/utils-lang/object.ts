@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { CamelCaseObjectKeys } from '../utils-types';
 import { isDefined } from './common';
+import { camelcase } from './string';
 
 export type AnyRecord = { [key: string]: any };
 
@@ -176,4 +178,20 @@ export const sortObjectKeys = <T extends object>(value: T, order: string[]) => {
     }
   });
   return Object.fromEntries(entries) as T;
+};
+
+export const objectKeysToCamelCase = <T>(input: T): CamelCaseObjectKeys<T> => {
+  if (Array.isArray(input)) {
+    return input.map(objectKeysToCamelCase) as CamelCaseObjectKeys<T>;
+  }
+
+  if (isDefined(input) && isObject(input)) {
+    const result: object = {};
+    for (const [key, value] of Object.entries(input)) {
+      result[camelcase(key)] = objectKeysToCamelCase(value);
+    }
+    return result as CamelCaseObjectKeys<T>;
+  }
+
+  return input;
 };

@@ -42,6 +42,7 @@ export {
   removeEmpty,
   sortObjectKeys,
   withoutKey,
+  objectKeysToCamelCase,
 } from './object';
 
 export {
