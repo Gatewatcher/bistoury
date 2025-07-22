@@ -8,6 +8,7 @@ import {
   isObjectEqual,
   isPlainObject,
   objectDiff,
+  objectKeysToCamelCase,
   removeEmpty,
   sortObjectKeys,
   withoutKey,
@@ -325,6 +326,34 @@ describe('Lang object utils tests', () => {
         b: 4,
       };
       expect(sortObjectKeys(inputObject, order)).toEqual(expectedResult);
+    });
+  });
+
+  it('should camelCase object keys', () => {
+    const input = {
+      first_name: 'john',
+      last_name: 'doe',
+      address: {
+        city: 'London',
+        zip_code: 0,
+        streets: [
+          { name: 'street1', number: 1, is_active: true },
+          { name: 'street2', number: 2, is_active: false },
+        ],
+      },
+    };
+
+    expect(objectKeysToCamelCase(input)).toEqual({
+      firstName: 'john',
+      lastName: 'doe',
+      address: {
+        city: 'London',
+        zipCode: 0,
+        streets: [
+          { name: 'street1', number: 1, isActive: true },
+          { name: 'street2', number: 2, isActive: false },
+        ],
+      },
     });
   });
 });
