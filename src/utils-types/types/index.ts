@@ -68,3 +68,18 @@ export type Diff<T extends object, U extends object> = Pick<
 export type NonPartial<T> = {
   [K in keyof Required<T> as T[K] extends never ? never : K]-?: T[K];
 };
+
+export type CamelCase<S extends string> =
+  S extends `${infer Head}_${infer Tail}`
+    ? `${Lowercase<Head>}${Capitalize<CamelCase<Tail>>}`
+    : Lowercase<S>;
+
+export type CamelCaseObjectKeys<T> = {
+  [K in keyof T as CamelCase<Extract<K, string>>]: T[K] extends Array<infer U>
+    ? U extends object
+      ? CamelCaseObjectKeys<U>[]
+      : T[K]
+    : T[K] extends object
+      ? CamelCaseObjectKeys<T[K]>
+      : T[K];
+};
