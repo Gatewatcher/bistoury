@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/Gatewatcher/bistoury/compare/v1.7.4...v1.8.0) (2025-07-23)
+
+
+### Bug Fixes
+
+* **utils-types:** add missing CamelCase types ([162d540](https://github.com/Gatewatcher/bistoury/commit/162d54018258a15c737adc526938fa03732f817c))
+
+
+### Features
+
+* **object:** add camelCase object type and convert object key to camelCase ([#18](https://github.com/Gatewatcher/bistoury/issues/18)) ([c68eba3](https://github.com/Gatewatcher/bistoury/commit/c68eba3328df4911ec68978fcd227859ae8cdcea))
+
 ## [1.7.4](https://github.com/Gatewatcher/bistoury/compare/v1.7.3...v1.7.4) (2025-07-08)
 
 
