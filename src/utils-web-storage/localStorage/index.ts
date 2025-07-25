@@ -33,6 +33,34 @@ export const get = (key: string) => {
     return isJSON(item) ? JSON.parse(item) : item;
   } catch (e) {
     consoleDebug(`unable to get localStorage ${e}`);
-    return e;
+    return false;
+  }
+};
+
+export const remove = (key: string) => {
+  if (!isSupported()) {
+    return false;
+  }
+
+  try {
+    window.localStorage.removeItem(key);
+    return true;
+  } catch (e) {
+    consoleDebug(`unable to remove localStorage ${e}`);
+    return false;
+  }
+};
+
+export const clear = () => {
+  if (!isSupported()) {
+    return false;
+  }
+
+  try {
+    window.localStorage.clear();
+    return true;
+  } catch (e) {
+    consoleDebug(`unable to clear localStorage ${e}`);
+    return false;
   }
 };
