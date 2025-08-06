@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { isDefined, isJSON } from './../../utils-lang/common';
+import { isDefined } from './../../utils-lang/common';
 import { consoleDebug } from './../../utils-log';
 
 export const isSupported = (): boolean => {
@@ -30,7 +30,11 @@ export const get = (key: string) => {
   }
   const item: any = window.localStorage.getItem(key);
   try {
-    return isJSON(item) ? JSON.parse(item) : item;
+    try {
+      return JSON.parse(item);
+    } catch {
+      return item;
+    }
   } catch (e) {
     consoleDebug(`unable to get localStorage ${e}`);
     return false;
