@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/Gatewatcher/bistoury/compare/v1.8.0...v1.9.0) (2025-08-06)
+
+
+### Features
+
+* **storage:** add local storage methods ([#19](https://github.com/Gatewatcher/bistoury/issues/19)) ([250ade5](https://github.com/Gatewatcher/bistoury/commit/250ade5406f1fc3df98403f0e3e784b2b9533cf0))
+
 # [1.8.0](https://github.com/Gatewatcher/bistoury/compare/v1.7.4...v1.8.0) (2025-07-23)
 
 
