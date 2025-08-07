@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/Gatewatcher/bistoury/compare/v1.9.0...v1.9.1) (2025-08-07)
+
+
+### Bug Fixes
+
+* **storage:** store and get strings ([#20](https://github.com/Gatewatcher/bistoury/issues/20)) ([#21](https://github.com/Gatewatcher/bistoury/issues/21)) ([2cbc818](https://github.com/Gatewatcher/bistoury/commit/2cbc818f25f26006933d1a8018d518843ace675f))
+
 # [1.9.0](https://github.com/Gatewatcher/bistoury/compare/v1.8.0...v1.9.0) (2025-08-06)
 
 
