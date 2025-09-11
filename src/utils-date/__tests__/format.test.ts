@@ -4,6 +4,7 @@ import {
   formatAbsoluteDate,
   format as formatDate,
   formatRelativeDate,
+  formatSeconds,
   getMsTimestamp,
   getSecondsTimestamp,
 } from '../format';
@@ -82,6 +83,28 @@ describe('date', () => {
       expect(getSecondsTimestamp(date)).toBe(timestampS);
       expect(getSecondsTimestamp(dayjs(date).toDate())).toBe(timestampS);
       expect(getSecondsTimestamp(dayjs(date).valueOf())).toBe(timestampS);
+    });
+  });
+
+  describe('format seconds', () => {
+    it('should format seconds to seconds', () => {
+      expect(formatSeconds(3)).toEqual({ value: 3, unit: 's' });
+      expect(formatSeconds(59)).toEqual({ value: 59, unit: 's' });
+    });
+
+    it('should format seconds to minutes', () => {
+      expect(formatSeconds(60)).toEqual({ value: 1, unit: 'm' });
+      expect(formatSeconds(110)).toEqual({ value: 2, unit: 'm' });
+    });
+
+    it('should format seconds to hours', () => {
+      expect(formatSeconds(4000)).toEqual({ value: 2, unit: 'h' });
+      expect(formatSeconds(3500 * 24)).toEqual({ value: 24, unit: 'h' });
+    });
+
+    it('should format seconds to days', () => {
+      expect(formatSeconds(3601 * 24)).toEqual({ value: 2, unit: 'd' });
+      expect(formatSeconds(10000000000).unit).toBe('d');
     });
   });
 });

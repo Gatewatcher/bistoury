@@ -1,12 +1,15 @@
 import dayjs from 'dayjs';
+import duration from 'dayjs/plugin/duration';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
 import { INPUT_DATE_FORMAT } from './constants';
 import './locales';
+import { DurationUnit } from './types';
 
 dayjs.extend(relativeTime);
 dayjs.extend(localizedFormat);
+dayjs.extend(duration);
 dayjs.locale('en-gb');
 
 export type Mode = 'relative' | 'absolute';
@@ -73,4 +76,20 @@ export const format = (date: DateInput, format, options?: FormatOptions) => {
 
 export const formatDateInput = (date: DateInput) => {
   return dayjs(date).format(INPUT_DATE_FORMAT);
+};
+
+export const formatSeconds = (
+  seconds: number,
+): { value: number; unit: DurationUnit } => {
+  const units: { unit: DurationUnit; seconds: number }[] = [
+    { unit: 'd', seconds: 86400 },
+    { unit: 'h', seconds: 3600 },
+    { unit: 'm', seconds: 60 },
+    { unit: 's', seconds: 1 },
+  ];
+
+  const { unit, seconds: unitSeconds } =
+    units.find(u => seconds >= u.seconds) ?? units.at(-1)!;
+
+  return { value: Math.ceil(seconds / unitSeconds), unit };
 };
