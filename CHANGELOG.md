@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/Gatewatcher/bistoury/compare/v1.9.1...v1.10.0) (2025-09-11)
+
+
+### Features
+
+* **data:** format seconds ([#22](https://github.com/Gatewatcher/bistoury/issues/22)) ([#23](https://github.com/Gatewatcher/bistoury/issues/23)) ([0af511d](https://github.com/Gatewatcher/bistoury/commit/0af511d683b8438cd96266cefe43b4b7cba6551c))
+
 ## [1.9.1](https://github.com/Gatewatcher/bistoury/compare/v1.9.0...v1.9.1) (2025-08-07)
 
 
