@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef } from 'react';
 type TimeoutId = ReturnType<typeof setTimeout>;
 
 export const useTimeout = (): [(...args: any) => void, () => void] => {
-  const timeout = useRef<TimeoutId | null>();
+  const timeout = useRef<TimeoutId | null>(null);
 
   // The same as the standard setTimeout function.
   const set = useCallback((fn: () => void, delay = 0) => {

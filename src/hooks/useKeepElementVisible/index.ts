@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from 'react';
-import * as React from 'react';
+import type { RefObject } from 'react';
 
 export const useKeepElementVisible = (
-  ref: React.MutableRefObject<HTMLLIElement | null>,
+  ref: RefObject<HTMLLIElement | null>,
   dependencies: any[] = [],
 ) => {
   useEffect(() => {

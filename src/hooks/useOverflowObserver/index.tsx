@@ -1,9 +1,9 @@
 import { useLayoutEffect, useState } from 'react';
-import * as React from 'react';
+import type { RefObject } from 'react';
 
 import { first } from './../../utils-lang/array';
 
-export const useOverflowObserver = (ref: React.RefObject<HTMLElement>) => {
+export const useOverflowObserver = (ref: RefObject<HTMLElement | null>) => {
   const [truncated, setTruncated] = useState(false);
   useLayoutEffect(() => {
     const currentElement = ref?.current;

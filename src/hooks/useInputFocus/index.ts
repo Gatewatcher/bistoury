@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback, useEffect, useRef } from 'react';
+import type { RefObject } from 'react';
 
 interface useInputFocusOptions {
   cursorPosition?: 'start' | 'end' | 'select';
@@ -8,7 +9,7 @@ interface useInputFocusOptions {
 
 export const useInputFocus = (
   options: useInputFocusOptions = {},
-): [React.RefObject<any>, () => void] => {
+): [RefObject<any>, () => void] => {
   const { cursorPosition, autofocus } = Object.assign(
     { cursorPosition: 'end' },
     options,
