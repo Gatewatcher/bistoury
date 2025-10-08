@@ -2,7 +2,7 @@
 import { useCallback, useRef } from 'react';
 
 export const useGetLatest = (obj: any) => {
-  const ref = useRef();
+  const ref = useRef(obj);
   ref.current = obj;
 
   return useCallback(() => ref.current, []);

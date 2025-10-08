@@ -5,7 +5,7 @@ export const useDebouncedCallback = <T extends (...args: any[]) => void>(
   func: T,
   timeout = 300,
 ) => {
-  const chrono = useRef<number>();
+  const chrono = useRef<number | undefined>(undefined);
 
   return useCallback(
     (...args: Parameters<T>) => {

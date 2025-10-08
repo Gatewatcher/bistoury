@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react';
-import { FC, forwardRef, useImperativeHandle } from 'react';
+import { FC, useImperativeHandle } from 'react';
 
 import { mergeRefs } from '..';
 
 test('mergeRefs', () => {
-  const Dummy = forwardRef(function Dummy(_, ref) {
+  const Dummy = ({ ref }: { ref: React.Ref<string> }) => {
     useImperativeHandle(ref, () => 'refValue');
     return null;
-  });
+  };
   const refAsFunc = vi.fn();
   const refAsObj = { current: undefined };
   const Example: FC<{ visible: boolean }> = ({ visible }) => {
