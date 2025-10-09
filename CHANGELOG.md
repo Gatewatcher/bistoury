@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/Gatewatcher/bistoury/compare/v1.11.0...v1.11.1) (2025-10-09)
+
+
+### Bug Fixes
+
+* release ([#29](https://github.com/Gatewatcher/bistoury/issues/29)) ([#30](https://github.com/Gatewatcher/bistoury/issues/30)) ([ed9bb1d](https://github.com/Gatewatcher/bistoury/commit/ed9bb1dae19ff4c7eeae565e7ed5b20b6a4e3ad0))
+
 # [1.11.0](https://github.com/Gatewatcher/bistoury/compare/v1.10.0...v1.11.0) (2025-10-09)
 
 
