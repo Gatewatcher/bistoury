@@ -1,3 +1,15 @@
+# [1.11.0](https://github.com/Gatewatcher/bistoury/compare/v1.10.0...v1.11.0) (2025-10-09)
+
+
+### Bug Fixes
+
+* release ([#27](https://github.com/Gatewatcher/bistoury/issues/27)) ([f925ef9](https://github.com/Gatewatcher/bistoury/commit/f925ef963da749bdf246e6d7fb95f84bd21dc6c0))
+
+
+### Features
+
+* **react migration:** migration to react v19 ([#24](https://github.com/Gatewatcher/bistoury/issues/24)) ([55b6874](https://github.com/Gatewatcher/bistoury/commit/55b68748c958260f3db9b3ab38250a11e5d958aa))
+
 # [1.10.0](https://github.com/Gatewatcher/bistoury/compare/v1.9.1...v1.10.0) (2025-09-11)
 
 
