@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/Gatewatcher/bistoury/compare/v1.11.1...v1.12.0) (2025-10-20)
+
+
+### Features
+
+* **utils-react:** expose `isReactNodeDisplayable` ([#31](https://github.com/Gatewatcher/bistoury/issues/31)) ([2f76e61](https://github.com/Gatewatcher/bistoury/commit/2f76e61995d4b3c42537a640109a46910880838f))
+
 ## [1.11.1](https://github.com/Gatewatcher/bistoury/compare/v1.11.0...v1.11.1) (2025-10-09)
 
 
