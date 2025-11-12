@@ -13,11 +13,15 @@ export const getCookie = (cookieName: string) => {
   return '';
 };
 
-export const setCookie = (name: string, value: string) => {
+export const setCookie = (
+  name: string,
+  value: string,
+  expires: number = 60 * 60 * 1000,
+) => {
   const d = new Date();
-  d.setTime(d.getTime() + 60 * 60 * 1000);
-  const expires = `expires=${d.toUTCString()}`;
-  document.cookie = `${name}=${value};${expires};path=/`;
+  d.setTime(d.getTime() + expires);
+  const expiresString = `expires=${d.toUTCString()}`;
+  document.cookie = `${name}=${value};${expiresString};path=/`;
 };
 
 export const checkCookie = (name: string, value: string) => {

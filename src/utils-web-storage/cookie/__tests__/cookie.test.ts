@@ -27,5 +27,6 @@ describe('Cookie tests', () => {
     const check = checkCookie('test', '2');
     expect(check).toBe(false);
   });
+
   afterAll(() => setCookie('test', ''));
 });
