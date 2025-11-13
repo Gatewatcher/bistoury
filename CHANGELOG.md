@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/Gatewatcher/bistoury/compare/v1.12.0...v1.13.0) (2025-11-13)
+
+
+### Features
+
+* **cookie:** add expiration timing for cookie ([#33](https://github.com/Gatewatcher/bistoury/issues/33)) ([#34](https://github.com/Gatewatcher/bistoury/issues/34)) ([d67b52b](https://github.com/Gatewatcher/bistoury/commit/d67b52b546c380482703423558c3cccec7397745))
+
 # [1.12.0](https://github.com/Gatewatcher/bistoury/compare/v1.11.1...v1.12.0) (2025-10-20)
 
 
