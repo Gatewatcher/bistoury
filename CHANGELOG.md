@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/Gatewatcher/bistoury/compare/v1.13.0...v1.14.0) (2025-12-09)
+
+
+### Features
+
+* **react update:** update react to version 19.2.1  ([#35](https://github.com/Gatewatcher/bistoury/issues/35)) ([#36](https://github.com/Gatewatcher/bistoury/issues/36)) ([9739c7c](https://github.com/Gatewatcher/bistoury/commit/9739c7cde093e674e8b6da4972da0ebbf7a1ba9e))
+
 # [1.13.0](https://github.com/Gatewatcher/bistoury/compare/v1.12.0...v1.13.0) (2025-11-13)
 
 
