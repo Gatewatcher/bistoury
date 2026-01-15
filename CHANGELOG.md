@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/Gatewatcher/bistoury/compare/v1.15.0...v1.15.1) (2026-01-15)
+
+
+### Bug Fixes
+
+* **date time:** export formatMilliSeconds utility ([#39](https://github.com/Gatewatcher/bistoury/issues/39)) ([b72e1f0](https://github.com/Gatewatcher/bistoury/commit/b72e1f0a35e70558518c59bcd85b96528bb35c47))
+
 # [1.15.0](https://github.com/Gatewatcher/bistoury/compare/v1.14.0...v1.15.0) (2026-01-15)
 
 
