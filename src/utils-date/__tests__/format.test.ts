@@ -3,6 +3,7 @@ import dayjs from 'dayjs';
 import {
   formatAbsoluteDate,
   format as formatDate,
+  formatMilliseconds,
   formatRelativeDate,
   formatSeconds,
   getMsTimestamp,
@@ -105,6 +106,38 @@ describe('date', () => {
     it('should format seconds to days', () => {
       expect(formatSeconds(3601 * 24)).toEqual({ value: 2, unit: 'd' });
       expect(formatSeconds(10000000000).unit).toBe('d');
+    });
+  });
+
+  describe('format milliseconds', () => {
+    it('should format to milliseconds when less than 1 second', () => {
+      expect(formatMilliseconds(0)).toBe('0ms');
+      expect(formatMilliseconds(300)).toBe('300ms');
+      expect(formatMilliseconds(999)).toBe('999ms');
+    });
+
+    it('should format to seconds when >= 1 second and < 1 minute', () => {
+      expect(formatMilliseconds(1000)).toBe('1s');
+      expect(formatMilliseconds(45000)).toBe('45s');
+      expect(formatMilliseconds(59999)).toBe('59s');
+    });
+
+    it('should format to minutes and seconds when >= 1 minute and < 1 hour', () => {
+      expect(formatMilliseconds(60000)).toBe('1m 0s');
+      expect(formatMilliseconds(100000)).toBe('1m 40s');
+      expect(formatMilliseconds(3599999)).toBe('59m 59s');
+    });
+
+    it('should format to hours and minutes when >= 1 hour and < 1 day', () => {
+      expect(formatMilliseconds(3600000)).toBe('1h 0m');
+      expect(formatMilliseconds(5400000)).toBe('1h 30m');
+      expect(formatMilliseconds(86399999)).toBe('23h 59m');
+    });
+
+    it('should format to days and hours when >= 1 day', () => {
+      expect(formatMilliseconds(86400000)).toBe('1d 0h');
+      expect(formatMilliseconds(90000000)).toBe('1d 1h');
+      expect(formatMilliseconds(180000000)).toBe('2d 2h');
     });
   });
 });

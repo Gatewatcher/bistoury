@@ -3,7 +3,13 @@ import duration from 'dayjs/plugin/duration';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
-import { INPUT_DATE_FORMAT } from './constants';
+import {
+  INPUT_DATE_FORMAT,
+  MS_PER_DAY,
+  MS_PER_HOUR,
+  MS_PER_MINUTE,
+  MS_PER_SECOND,
+} from './constants';
 import './locales';
 import { DurationUnit } from './types';
 
@@ -92,4 +98,31 @@ export const formatSeconds = (
     units.find(u => seconds >= u.seconds) ?? units.at(-1)!;
 
   return { value: Math.ceil(seconds / unitSeconds), unit };
+};
+
+export const formatMilliseconds = (ms: number): string => {
+  if (ms >= MS_PER_DAY) {
+    const days = Math.floor(ms / MS_PER_DAY);
+    const hours = Math.floor((ms % MS_PER_DAY) / MS_PER_HOUR);
+    return `${days}d ${hours}h`;
+  }
+
+  if (ms >= MS_PER_HOUR) {
+    const hours = Math.floor(ms / MS_PER_HOUR);
+    const minutes = Math.floor((ms % MS_PER_HOUR) / MS_PER_MINUTE);
+    return `${hours}h ${minutes}m`;
+  }
+
+  if (ms >= MS_PER_MINUTE) {
+    const minutes = Math.floor(ms / MS_PER_MINUTE);
+    const seconds = Math.floor((ms % MS_PER_MINUTE) / MS_PER_SECOND);
+    return `${minutes}m ${seconds}s`;
+  }
+
+  if (ms >= MS_PER_SECOND) {
+    const seconds = Math.floor(ms / MS_PER_SECOND);
+    return `${seconds}s`;
+  }
+
+  return `${ms}ms`;
 };
