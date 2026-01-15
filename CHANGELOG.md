@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/Gatewatcher/bistoury/compare/v1.14.0...v1.15.0) (2026-01-15)
+
+
+### Features
+
+* **date time:** add a utility to format milliseconds as time passed ([#37](https://github.com/Gatewatcher/bistoury/issues/37)) ([f214944](https://github.com/Gatewatcher/bistoury/commit/f2149447bb97c647d482f46a092476ef9491cd00))
+
 # [1.14.0](https://github.com/Gatewatcher/bistoury/compare/v1.13.0...v1.14.0) (2025-12-09)
 
 
