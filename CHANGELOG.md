@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/Gatewatcher/bistoury/compare/v1.15.1...v1.16.0) (2026-01-16)
+
+
+### Features
+
+* **formatMilliseconds:** add spaces between number and unit ([#41](https://github.com/Gatewatcher/bistoury/issues/41)) ([#42](https://github.com/Gatewatcher/bistoury/issues/42)) ([127828f](https://github.com/Gatewatcher/bistoury/commit/127828f088895a3ff73af46fc0208019cea3b979))
+
 ## [1.15.1](https://github.com/Gatewatcher/bistoury/compare/v1.15.0...v1.15.1) (2026-01-15)
 
 
