@@ -104,25 +104,25 @@ export const formatMilliseconds = (ms: number): string => {
   if (ms >= MS_PER_DAY) {
     const days = Math.floor(ms / MS_PER_DAY);
     const hours = Math.floor((ms % MS_PER_DAY) / MS_PER_HOUR);
-    return `${days}d ${hours}h`;
+    return `${days} d ${hours} h`;
   }
 
   if (ms >= MS_PER_HOUR) {
     const hours = Math.floor(ms / MS_PER_HOUR);
     const minutes = Math.floor((ms % MS_PER_HOUR) / MS_PER_MINUTE);
-    return `${hours}h ${minutes}m`;
+    return `${hours} h ${minutes} m`;
   }
 
   if (ms >= MS_PER_MINUTE) {
     const minutes = Math.floor(ms / MS_PER_MINUTE);
     const seconds = Math.floor((ms % MS_PER_MINUTE) / MS_PER_SECOND);
-    return `${minutes}m ${seconds}s`;
+    return `${minutes} m ${seconds} s`;
   }
 
   if (ms >= MS_PER_SECOND) {
     const seconds = Math.floor(ms / MS_PER_SECOND);
-    return `${seconds}s`;
+    return `${seconds} s`;
   }
 
-  return `${ms}ms`;
+  return `${ms} ms`;
 };
