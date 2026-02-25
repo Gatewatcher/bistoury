@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/Gatewatcher/bistoury/compare/v1.16.0...v1.17.0) (2026-02-25)
+
+
+### Features
+
+* **utils-date:** remove spaces in `formatMilliseconds` output ([#43](https://github.com/Gatewatcher/bistoury/issues/43)) ([#44](https://github.com/Gatewatcher/bistoury/issues/44)) ([a92930b](https://github.com/Gatewatcher/bistoury/commit/a92930bc283537ce6dbbfbe4b5b4eeb88c890d26))
+
 # [1.16.0](https://github.com/Gatewatcher/bistoury/compare/v1.15.1...v1.16.0) (2026-01-16)
 
 
