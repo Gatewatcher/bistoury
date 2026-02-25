@@ -1,3 +1,11 @@
+## [1.17.1](https://github.com/Gatewatcher/bistoury/compare/v1.17.0...v1.17.1) (2026-02-25)
+
+
+### Bug Fixes
+
+* ci ([0335812](https://github.com/Gatewatcher/bistoury/commit/0335812dcae3daea922c67fd8add357f23f1d307))
+* ci ([#46](https://github.com/Gatewatcher/bistoury/issues/46)) ([dcce0c5](https://github.com/Gatewatcher/bistoury/commit/dcce0c5d8d16de1c5ee6fa2c93e37bc4ec813b75))
+
 # [1.17.0](https://github.com/Gatewatcher/bistoury/compare/v1.16.0...v1.17.0) (2026-02-25)
 
 
