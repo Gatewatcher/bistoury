@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
 
 type useScrollToAnchorOptions = ScrollIntoViewOptions & { timeout: number };
 
@@ -11,12 +10,12 @@ const DEFAULT_OPTIONS: ScrollIntoViewOptions = {
 };
 
 export const useScrollToAnchor = (
+  hash: string,
   options: useScrollToAnchorOptions = {
     ...DEFAULT_OPTIONS,
     timeout: DEFAULT_TIMEOUT,
   },
 ) => {
-  const { hash } = useLocation();
   const lastHash = useRef('');
   const { timeout, ...rest } = options;
 
